@@ -1,0 +1,878 @@
+@charset "UTF-8";
+body{
+grid-template-columns: repeat(12, 1fr);
+background-color: black;
+}
+body.no-scroll {
+overflow: hidden;
+height: 100vh;
+}
+a { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover, a:active { text-decoration: none; }
+/* mobile */
+.mobile-bio {
+display: none; 
+}
+a .sugarshot-button.mobile-bio {
+display: none;
+}
+* {
+margin: 0 !important;
+scroll-behavior: smooth;
+box-sizing: inherit;
+}
+section{
+padding: 2% 15%;
+}
+/* fonts */
+h5{
+font-size: 3em;
+}
+h1, h2, h3, h4 {
+font-family: 'helvetica-neue-lt-pro';
+font-weight: 500;
+text-transform: uppercase;
+}
+h1{
+font-size: 4em;
+}
+h5, h6 {
+font-family: 'helvetica-neue-lt-pro';
+font-weight: 100;
+font-style: italic;
+}
+h3, h6{
+color: white;
+font-size: 2em;
+}
+p {
+font-family: 'helvetica-neue-lt-pro';
+font-weight: 300;
+color: white;
+font-size: 1.2em;
+padding-bottom: 1em;
+}
+/* nav */
+header{
+display: grid;
+padding: 4% 15% 1% 15%;
+}
+header a img {
+display: grid;
+justify-items: flex-start;
+}
+.desktop-nav{
+grid-row:1/span 1;
+grid-column: 10/span 3;
+font-family: 'helvetica-neue-lt-pro';
+font-weight: 100;
+font-style: normal;
+text-transform: uppercase;
+display: grid;
+justify-items: flex-end;
+}
+.desktop-nav ul { 
+padding: 2% 0; 
+display: flex;
+flex-direction: row;
+list-style: none;
+}
+.desktop-nav ul li {
+padding: 0 5%;
+}
+nav a {
+color: #fff;
+text-transform: uppercase;
+text-decoration: none;
+letter-spacing: 0.15em;
+position: relative;
+z-index: 200;
+max-width: 80%;
+transition: opacity 0.3s ease-in-out;
+padding: 2% 2%;
+}
+nav a:after {
+background: transparent;
+bottom: 0;
+content: "";
+height: 2px;
+left: 50%;
+position: absolute;
+background: #fff;
+transition: width 0.3s ease 0s, left 0.3s ease 0s;
+width: 0;
+}
+.desktop-nav a:hover:after {
+width: 100%; 
+left: 0; 
+}
+
+/* hamburger button */
+.hamburger {
+height: 50px;
+width: 50px;
+position: relative;
+justify-items: flex-end;
+z-index: 200;
+}
+.hamburger:hover{
+cursor: pointer;
+}
+
+.hamburger span {
+width: 65%;
+height: 3px;
+background-color: #fff;
+position: absolute;
+left: 32%;
+transform: translateX(-50%);
+transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger span:nth-child(1) { top: 25%; }
+.hamburger span:nth-child(2) { top: 50%; }
+.hamburger span:nth-child(3) { top: 75%; }
+
+/* animation */
+.hamburger.active span:nth-child(1) {
+top: 50%;
+transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+top: 50%;
+transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+/* wrapper */
+.mobile-nav {
+display: none;
+}
+
+/* main overlay*/
+.mobile-menu {
+background-color: rgba(0, 0, 0, 0.35);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+font-family: 'helvetica-neue-lt-pro';
+font-size: 2em;
+font-weight: 100;
+line-height: 2em;
+height: 100vh;
+width: 100%;
+max-width: 100vh;
+position: fixed;
+top: 0;
+right: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.3s ease-in-out;
+}
+
+.mobile-menu.open {
+opacity: 1;
+pointer-events: all;
+}
+
+#mobileMenu {
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.3s ease-in-out;
+z-index: 100;
+}
+
+#mobileMenu.open {
+opacity: 1;
+pointer-events: all;
+}
+
+/* page title */
+.pagetitle {
+padding: 0 15% 2% 15%;
+}
+/* first section */
+.hero {
+background-image: url(images/IMG_0071.JPG);
+display: grid;
+background-size: cover;
+padding: 4% 15%;
+grid-template-rows: repeat(8, 7em);
+}
+header div{
+grid-row: 5/span 3;
+grid-column: 1/span 12;
+color: white;
+line-height: 3em;
+}
+/* second section */
+.contact {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(3em, 1fr));
+gap: 1em;
+background-color: #3A5C5C;
+align-items: center;
+padding: 5% 15%;
+width: 100%;
+max-width: 100%; /* keeps it inside section */
+box-sizing: border-box;
+overflow: hidden; /* prevents bleed */
+}
+.contactme
+.contacts {
+width: 100%;
+max-width: 100%;
+box-sizing: border-box;
+overflow-wrap: break-word;
+}
+.contacts li {
+font-family: 'helvetica-neue-lt-pro';
+font-weight: 300;
+font-size: 1.5em;
+font-style: italic;
+list-style: none;
+line-height: 1.7em;
+}
+.contacts ul {
+padding: 0;
+margin: 0;
+list-style: none;
+}
+.contacts a{
+color: white;
+}
+.contacts img{
+padding: 0 2%;
+}
+/* third section */
+.portfolio {
+padding: 6% 15%;
+background-color: #4C6758;
+}
+.portfolio .title{
+padding-bottom: 2%;}
+.work {
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+grid-gap: 1%;
+}
+.work img {
+max-width: 100%;
+}
+.work h4 {
+text-align: center;
+padding: 4% 0;
+color: white;
+}
+.column1 {
+grid-column: 1/span 4;
+}
+.column2 {
+grid-column: 5/span 4;
+}
+.column3 {
+grid-column: 9/span 4;
+}
+
+/* containters */
+.hover img {
+transition: transform .4s ease, opacity .4s ease;
+}
+.hover:hover img {
+transform: scale(1.05);
+opacity: .7;
+}
+.contain {
+display: flex;
+flex-direction: column;
+gap: 40px;
+position: relative;
+overflow: hidden;
+justify-content: flex-end;
+}
+
+/* forth section */
+.aboutme {
+background-image: url(images/portrait.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+padding: 6% 15%;
+display: grid;
+grid-template-rows: repeat(12, 4em);
+grid-template-columns: repeat(12, 1fr);
+}
+.title-aboutme {
+grid-column: 1/span 3;
+}
+.bio {
+grid-row: 3/span 4;
+grid-column: 1/span 4;
+}
+.aboutme-img {
+display: none;
+}
+
+/* footer */
+footer {
+text-align: center;
+line-height: 2em;
+overflow: visible;
+padding: 3% 0;
+}
+footer img {
+height: 7em;
+}
+footer p{
+font-size: 1em;
+}
+footer div {
+text-align: center;
+padding-top: 1%;
+}
+footer div a img{
+height: 1.7em;
+padding: 0 .7%;
+}
+
+/* prev and next */
+.bottom-nav {
+padding: 2% 1%;
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+text-align: center;
+font-family: 'helvetica-neue-lt-pro';
+font-weight: 300;
+text-transform: uppercase;
+font-size: 2em;
+color: white;
+text-decoration: none;
+}
+.bottom-nav a {
+color: inherit;
+text-decoration: none;
+}
+
+.bottom-nav a:visited {
+color: inherit;
+}
+
+.bottom-nav a:hover,
+.bottom-nav a:active {
+color: inherit;
+}
+.b1 {
+grid-column: 1/ span 1;
+}
+.b2 {
+grid-column: 12/span 1;
+}
+/* tags */
+
+.amatshirt .tag,
+.covering .tag,
+.sugar .tag,
+.picto .tag,
+.jenene .tag,
+.poster .tag{
+font-size: 1rem;
+background-color: black;
+color: white;
+grid-row: 5/span 1;
+grid-column: inherit;
+text-align: center;
+align-self: center;
+gap: 20%;
+padding: 5%;
+border-radius: 5%;
+}
+
+/* ama t-shirt */
+.amatshirt {
+background-image: url(images/amatshirtbanner.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+padding: 3% 15%;
+display: grid;
+grid-template-rows: repeat(11, 3.2em);
+grid-template-columns: repeat(12, 1fr);
+grid-gap: 1em;
+}
+.amatshirt h3{
+color: black;
+grid-row: 4/ span 1;
+grid-column: 1 /span 4;
+text-transform: capitalize;
+align-self: center;
+}
+
+.amatshirt p {
+grid-row: 6/ span 6;
+grid-column: 1 /span 4;
+color: black;
+padding-top: 1em;
+}
+
+/* cover boys love */
+.covering {
+background-image: url(images/boyslovebanner.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+padding: 3% 15%;
+display: grid;
+grid-template-rows: repeat(12, 3.2em);
+grid-template-columns: repeat(12, 1fr);
+}
+.covering h3{
+color: black;
+grid-row: 4/ span 1;
+grid-column: 1 /span 5;
+text-transform: capitalize;
+}
+.covering p {
+grid-row: 6/ span 6;
+grid-column: 1 /span 4;
+color: black;
+padding-top: 1em;
+}
+
+/* sugar shot */
+.sugar {
+background-image: url(images/sugarshotbanner.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+padding: 3% 15%;
+display: grid;
+grid-template-rows: repeat(12, 3.2em);
+grid-template-columns: repeat(12, 1fr);
+}
+.sugar h3{
+color: white;
+grid-row: 4/ span 1;
+grid-column: 1 /span 5;
+text-transform: capitalize;
+}
+.sugar p {
+grid-row: 6/ span 6;
+grid-column: 1 /span 4;
+color: white;
+padding-top: 1em;
+}
+.sugarshot-button {
+font-family: 'helvetica-neue-lt-pro';
+font-weight: 300;
+grid-row: 12/ span 1;
+grid-column: 1/ span 3;
+border-style: solid;
+background-color: #ffffff00;
+border-color: white;
+color: white;
+text-decoration: none;
+text-align: center;
+align-self: center;
+padding: 5%;
+display: inline-block;
+font-size: 1.5em;
+cursor: pointer;
+transition: background-color 0.4s ease, color 0.4s ease;
+}
+.sugarshot-button:hover,
+.sugarshot-button:active {
+background-color: white;
+color: black;
+}
+
+/* pictogram */
+.picto {
+background-image: url(images/olympicsbanners.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+padding: 3% 15%;
+display: grid;
+grid-template-rows: repeat(12, 3.2em);
+grid-template-columns: repeat(12, 1fr);
+}
+.picto h3{
+color: black;
+grid-row: 4/ span 1;
+grid-column: 1 /span 5;
+text-transform: capitalize;
+}
+.picto p {
+grid-row: 6/ span 6;
+grid-column: 1 /span 4;
+color: black;
+padding-top: 1em;
+}
+
+/* jenene */
+.jenene {
+background-image: url(images/jenenebanner.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+padding: 3% 15%;
+display: grid;
+grid-template-rows: repeat(12, 3.2em);
+grid-template-columns: repeat(12, 1fr);
+}
+.jenene h3{
+color: black;
+grid-row: 4/ span 1;
+grid-column: 1 /span 5;
+text-transform: capitalize;
+}
+.jenene p {
+grid-row: 6/ span 6;
+grid-column: 1 /span 4;
+color: black;
+padding-top: 1em;
+}
+
+/* ama poster */
+.poster {
+background-image: url(images/amaposterbanner.png);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+padding: 3% 15%;
+display: grid;
+grid-template-rows: repeat(12, 3.2em);
+grid-template-columns: repeat(12, 1fr);
+}
+.poster h3{
+color: white;
+grid-row: 4/ span 1;
+grid-column: 1 /span 5;
+text-transform: capitalize;
+}
+.poster p {
+grid-row: 6/ span 6;
+grid-column: 1 /span 4;
+color: white;
+padding-top: 1em;
+}
+
+/* galleries */
+.images-gallery {
+padding: 2% 15%;
+gap: 1em;
+display: flex;
+flex-wrap: wrap;
+}
+.column {
+flex: 47%;
+max-width: 47%;
+padding: 0 1%;
+}
+.column img {
+vertical-align: middle;
+width: 100%;
+padding: 2% 0;
+}
+.one-column {
+flex: 100%;
+max-width: 100%;
+padding: 0 1%;
+}
+.one-column img {
+margin-top: 5%;
+vertical-align: middle;
+width: 100%;
+}
+
+/* iphone 12/13 mini */
+@media (max-width: 378px) {
+.footer img {
+height: 5em;
+}
+.social img{
+height: 1.5em;
+padding: 0 2%;
+}
+.title-aboutme,
+.bio {
+padding: 5% 10% !important;
+}
+.bottom-nav {
+padding: 2% 5%;
+}
+}
+
+/* iphone 15 pro max */
+@media (max-width: 700px) {
+.bottom-nav {
+padding: 2% 5%;
+}
+/* nav */
+.logo,
+.desktop-nav {
+display: none;
+}
+
+.hero {
+padding: 5% 10%;
+}
+
+.mobile-nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1em 0;
+}
+
+.mobile-nav,
+.hamburger {
+display: grid;    
+}
+
+/* Contacts reflow into safe grid */
+.contact {
+grid-template-rows: auto;
+grid-template-columns: 1fr;
+gap: 1.2em;
+}
+
+.contactme {
+grid-column: 1 / -1;
+grid-row: auto;
+}
+
+.contacts {
+grid-column: 1 / -1;
+grid-row: auto;
+}
+
+/* Banner headers positioned bottom-left */
+.amatshirt,
+.covering,
+.picto,
+.sugar,
+.jenene,
+.poster {
+background-size: cover;
+position: relative;
+background-repeat: no-repeat;
+background-position: right;
+padding: 3% 10%;
+display: grid;
+width: 100%;
+overflow: hidden;
+box-sizing: border-box;
+z-index: 1;
+grid-template-rows: repeat(6, 3em);
+}
+
+.amatshirt h3,
+.covering h3,
+.sugar h3,
+.jenene h3,
+.poster h3 {
+position: absolute;
+width: auto;
+margin: 0;
+text-align: left;
+text-transform: capitalize;
+grid-row: 3 / span 1;
+grid-column: 1 / span 10;
+}
+.picto h3 {
+grid-column: 1 / span 9;
+grid-row: 3 / span 1;
+}
+.mobile-bio {
+display: block;
+padding: 6% 10% 2% 10%;
+}
+
+/* Hide desktop-only content */
+.amatshirt p,
+.covering p,
+.picto p,
+.sugar p,
+.sugar a,
+.jenene p,
+.poster p {
+display: none;
+}
+footer {
+padding: 2% 0 13% 0;
+}
+.footer img {
+height: 5em;
+}
+.social img{
+height: 1.4em;
+padding: 0 2%;
+}
+}
+
+/* iPad Mini */
+@media (max-width: 966px) {
+.bottom-nav {
+padding: 2% 5%;
+}
+.contacts {
+grid-column: 1 / span 1;
+font-size: 10pt;
+}
+.contact {
+grid-template-rows: auto;
+gap: 1em;
+}
+
+/* About Me mobile layout */
+.aboutme {
+background-image: none;
+padding: 0;
+display: flex;
+flex-direction: column;
+}
+
+.aboutme-img {
+display: block;
+margin: 5%;
+width: 100%;
+height: 22em;
+background-image: url(images/portraitmobile.jpg);
+background-size: cover;
+background-position: center;
+margin-bottom: 2em;
+box-sizing: border-box;
+}
+
+.bio {
+all: unset;
+color: white;
+font-size: 1em;
+line-height: 1.6;
+text-align: left;
+padding: 0;
+max-width: 100%;
+box-sizing: border-box;
+}
+
+.title-aboutme,
+.pagetitle,
+header.hero {
+padding: 5% 0%;
+}
+
+.work {
+grid-template-columns: 1fr;
+grid-gap: 1.5rem;
+}
+  
+/* Make each project span full width */
+.column1,
+.column2,
+.column3 {
+grid-column: 1 / -1;
+}
+
+.amatshirt p,
+.covering p,
+.picto p,
+.sugar p,
+.jenene p,
+.poster p {
+grid-column: 1/ span 7;
+font-weight: 400;
+}
+.sugarshot-button {
+grid-column: 1/ span 3;
+}
+
+}
+
+/* iPad Pro (12.9in) */
+@media (max-width: 1481px) {
+.amatshirt,
+.covering,
+.picto,
+.sugar,
+.jenene,
+.poster {
+background-size: cover;
+position: relative;
+background-repeat: no-repeat;
+background-position: right;
+padding: 3% 10%;
+display: grid;
+width: 100%;
+overflow: hidden;
+box-sizing: border-box;
+z-index: 1;
+grid-template-rows: repeat(4, 3em);
+}
+p {
+font-size: 1em;
+}
+.bottom-nav {
+padding: 2% 5%;
+}
+header {
+padding: 5% 10%;
+}
+header.hero {
+padding: 8% 10%;
+}
+
+.contacts {
+padding-top: 1em;
+}
+.contact {
+padding: 5% 10%;
+}
+
+.column {
+display: block;
+flex: 100%;
+max-width: 100%;
+padding: 0;
+}
+.portfolio {
+padding: 8% 10%;
+}
+.aboutme {
+padding: 5% 10%;
+}
+.title-aboutme {
+  grid-column: 1/span 5;
+}
+.pagetitle {
+padding: 0 10% 2% 10%;
+}
+header {
+padding: 8% 10% 2% 10%;
+}
+}
+
+@media (min-width: 1275px) {
+.contacts {
+grid-column: 2 / span 1;
+padding-left: 30%;
+}
+}
+
+@media (min-width: 1482px) {
+.sugar p {
+grid-column: 1 /span 5;
+}
+}
